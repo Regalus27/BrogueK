@@ -1472,7 +1472,7 @@ const blueprint blueprintCatalog[NUMBER_BLUEPRINTS] = {
 		{DF_BONES,	SECRET_DOOR,DUNGEON,		{1,1},		1,			0,			0,			0,				3,				0,			0,			(MF_PERMIT_BLOCKING | MF_BUILD_AT_ORIGIN)},
 		{DF_LUMINESCENT_FUNGUS,	STATUE_INERT,DUNGEON,{7,7},	0,			0,			-1,			0,				2,				0,			0,			(MF_TREAT_AS_BLOCKING)},
 		{DF_BONES,	0,			0,				{1,1},		1,			0,			-1,			0,				1,				HORDE_MACHINE_BOSS,	0,	(MF_ADOPT_ITEM | MF_FAR_FROM_ORIGIN | MF_MONSTER_TAKE_ITEM | MF_GENERATE_HORDE | MF_MONSTER_SLEEPING)}}},
-	
+
 	// -- FLAVOR MACHINES --
 	
 	// Bloodwort -- bloodwort stalk, some pods, and surrounding grass
@@ -1549,7 +1549,7 @@ creatureType monsterCatalog[NUMBER_MONSTER_KINDS] = {
 	//	name			ch		color			HP		def		acc		damage			reg	move	attack	blood			light	DFChance DFType         bolts       behaviorF, abilityF
 	{0,	"you",	PLAYER_CHAR,	&playerInLightColor,30,	0,		100,	{1, 2, 1},		20,	100,	100,	DF_RED_BLOOD,	0,		0,		0,              {0},
 		(MONST_MALE | MONST_FEMALE)},
-	{0, "kobold archer", 'k', &tanColor, 5, 0, 60, {1,2,1}, 20, 100, 100, DF_RED_BLOOD, 0, 0, 0, {BOLT_DISTANCE_ATTACK}, (MONST_MAINTAINS_DISTANCE | MONST_CAST_SPELLS_SLOWLY), (0)},
+	{0, "kobold archer", 'k', &tanColor, 		5, 		0, 		60, 	{1,2,1}, 		20, 100, 	100, 	DF_RED_BLOOD, 	0, 		0, 		0, {BOLT_DISTANCE_ATTACK}, (MONST_MAINTAINS_DISTANCE | MONST_CAST_SPELLS_SLOWLY), (0)},
 	{0, "rat",			'r',	&gray,			6,		0,		80,		{1, 3, 1},		20,	100,	100,	DF_RED_BLOOD,	0,		1,		DF_URINE,       {0}},
 	{0, "kobold",		'k',	&goblinColor,	7,		0,		80,		{1, 4, 1},		20,	100,	100,	DF_RED_BLOOD,	0,		0,		0,              {0}},
 	{0,	"jackal",		'j',	&jackalColor,	8,		0,		70,		{2, 4, 1},		20,	50,		100,	DF_RED_BLOOD,	0,		1,		DF_URINE,              {0}},
@@ -1609,7 +1609,7 @@ creatureType monsterCatalog[NUMBER_MONSTER_KINDS] = {
 		(MONST_IMMUNE_TO_FIRE | MONST_SUBMERGES | MONST_NEVER_SLEEPS | MONST_FIERY | MONST_MALE), (MA_ATTACKS_EXTEND)},
 	{0, "explosive bloat",'b',	&orange,		10,		0,		100,	{0, 0, 0},		5,	100,	100,	DF_RED_BLOOD,	EXPLOSIVE_BLOAT_LIGHT,0, DF_BLOAT_EXPLOSION, {0},
 		(MONST_FLIES | MONST_FLITS), (MA_KAMIKAZE | MA_DF_ON_DEATH)},
-	{0, "kobold dragonblessed", 'k', &dragonColor, 40, 	80,		120,	{6, 10,3},		20, 50, 	100,	DF_GREEN_BLOOD, 1,		0, 		0,				{0}, (MONST_IMMUNE_TO_FIRE)}, 
+	{0, "dragonblessed", 'k', &centipedeColor, 40, 	80,		120,	{6, 10,3},		20, 50, 	100,	DF_GREEN_BLOOD, 1,		0, 		0,				{0}, (MONST_IMMUNE_TO_FIRE)}, 
 	{0, "dar blademaster",'d',	&purple,		35,		70,     160,	{5, 9, 2},		20,	100,	100,	DF_RED_BLOOD,	0,		0,		0,              {BOLT_BLINKING},
 		(MONST_CARRY_ITEM_25 | MONST_MALE | MONST_FEMALE), (MA_AVOID_CORRIDORS)},
 	{0, "dar priestess", 'd',	&darPriestessColor,20,	60,		100,	{2, 5, 1},		20,	100,	100,	DF_RED_BLOOD,   0,		0,		0,              {BOLT_NEGATION, BOLT_HEALING, BOLT_HASTE, BOLT_SPARK},
@@ -1649,6 +1649,8 @@ creatureType monsterCatalog[NUMBER_MONSTER_KINDS] = {
 	{0, "tentacle horror",'H',	&centipedeColor,120,	95,     225,	{25, 35, 3},	1,	100,	100,	DF_PURPLE_BLOOD,0,		0,		0,              {0}},
 	{0, "golem",		'G',	&gray,			400,	70,     225,	{4, 8, 1},		0,	100,	100,	DF_RUBBLE_BLOOD,0,		0,		0,              {0},
 		(MONST_REFLECT_4 | MONST_DIES_IF_NEGATED)},
+	{0, "dragon warrior",'k', 	&dragonColor,	70,		60,		150,	{8, 12, 4},		20,	50,		100,	DF_GREEN_BLOOD, 0,		0,		0,				{BOLT_FIRE},
+		(MONST_IMMUNE_TO_FIRE | MONST_FIERY | MONST_CARRY_ITEM_25)},
 	{0, "dragon",		'D',	&dragonColor,	150,	90,     250,	{25, 50, 4},	20,	50,		200,	DF_GREEN_BLOOD,	0,		0,		0,              {BOLT_DRAGONFIRE},
 		(MONST_IMMUNE_TO_FIRE | MONST_CARRY_ITEM_100), (MA_ATTACKS_ALL_ADJACENT)},
 	
@@ -1874,6 +1876,9 @@ const monsterWords monsterText[NUMBER_MONSTER_KINDS] = {
 	{"A statue animated by an ancient and tireless magic, the golem does not regenerate and attacks with only moderate strength, but $HISHER stone form can withstand incredible damage before collapsing into rubble.",
 		"cradling", "Cradling",
 		{"backhands", "punches", "kicks", {0}}},
+	{"Champion of the dragons, this warrior strikes fear into the hearts of its enemies.",
+		"burning", "Burning",
+		{"burns", "slashes",{0}}},
 	{"An ancient serpent of the world's deepest places, the dragon's immense form belies its lightning-quick speed and testifies to $HISHER breathtaking strength. An undying furnace of white-hot flames burns within $HISHER scaly hide, and few could withstand a single moment under $HISHER infernal lash.",
 		"consuming", "Consuming",
 		{"claws", "tail-whips", "bites", {0}}},
