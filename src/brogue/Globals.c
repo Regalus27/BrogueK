@@ -1549,6 +1549,8 @@ creatureType monsterCatalog[NUMBER_MONSTER_KINDS] = {
 	//	name			ch		color			HP		def		acc		damage			reg	move	attack	blood			light	DFChance DFType         bolts       behaviorF, abilityF
 	{0,	"you",	PLAYER_CHAR,	&playerInLightColor,30,	0,		100,	{1, 2, 1},		20,	100,	100,	DF_RED_BLOOD,	0,		0,		0,              {0},
 		(MONST_MALE | MONST_FEMALE)},
+	{0, "fire beetle", 'Q', 	&fireBoltColor,	5,		0,		35,		{1, 3, 1},		20,	100,	100,	DF_RED_BLOOD,	3,		0,		0,	{0},
+		(MONST_FIERY | MONST_IMMUNE_TO_FIRE)},
 	{0, "kobold archer", 'k', &tanColor, 		5, 		0, 		60, 	{1,2,1}, 		20, 100, 	100, 	DF_RED_BLOOD, 	0, 		0, 		0, {BOLT_DISTANCE_ATTACK}, (MONST_MAINTAINS_DISTANCE | MONST_CAST_SPELLS_SLOWLY), (0)},
 	{0, "rat",			'r',	&gray,			6,		0,		80,		{1, 3, 1},		20,	100,	100,	DF_RED_BLOOD,	0,		1,		DF_URINE,       {0}},
 	{0, "kobold",		'k',	&goblinColor,	7,		0,		80,		{1, 4, 1},		20,	100,	100,	DF_RED_BLOOD,	0,		0,		0,              {0}},
@@ -1703,6 +1705,9 @@ const monsterWords monsterText[NUMBER_MONSTER_KINDS] = {
 	{"A naked adventurer in an unforgiving place, bereft of equipment and confused about the circumstances.",
 		"studying", "Studying",
 		{"hit", {0}}},
+	{"The fire beetle is a red-hot scavenger, always on the prowl for an unsuspecting meal.",
+		"chewing at", "Gnawing",
+		{"singes", "bites", {0}}},
 	{"This kobold found a bow and fancies itself an archer.",
 		"poking at", "Eating",
 		{"shoots",{0}}},
@@ -1976,11 +1981,13 @@ const mutation mutationCatalog[NUMBER_MUTATORS] = {
 const hordeType hordeCatalog[NUMBER_HORDES] = {
 	// leader		#members	member list								member numbers					minL	maxL	freq	spawnsIn		machine			flags
 	{MK_RAT,			0,		{0},									{{0}},							1,		5,		15},
+	{MK_FIRE_BEETLE,	0,		{0},									{{0}},							1,		6,		10},
 	{MK_KOBOLD,			0,		{0},									{{0}},							1,		6,		15},
 	{MK_KOBOLD,			2,		{MK_KOBOLD, MK_KOBOLD_ARCHER},			{{0, 2, 1}, {0, 2, 1}},			2,		4,		7},
 	{MK_KOBOLD,			2,		{MK_KOBOLD, MK_KOBOLD_ARCHER},			{{2,5,1}, {1,2,1}},				5,		8,		10},
 	{MK_JACKAL,			0,		{0},									{{0}},							1,		3,		10},
 	{MK_JACKAL,			1,		{MK_JACKAL},							{{1, 3, 1}},					3,		7,		5},
+	{MK_FIRE_BEETLE,	1,		{MK_FIRE_BEETLE},						{{1, 2, 1}},					4,		10,		8},
 	{MK_EEL,			0,		{0},									{{0}},							2,		17,		10,		DEEP_WATER},
 	{MK_MONKEY,			0,		{0},									{{0}},							2,		9,		5},
 	{MK_BLOAT,			0,		{0},									{{0}},							2,		13,		3},

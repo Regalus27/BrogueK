@@ -907,6 +907,7 @@ enum scrollKind {
 
 enum monsterTypes {
 	MK_YOU,
+	MK_FIRE_BEETLE,
 	MK_KOBOLD_ARCHER,
 	MK_RAT,
 	MK_KOBOLD,
