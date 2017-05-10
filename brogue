@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+export LD_LIBRARY_PATH=/home/cooper/Documents/brogue-1.7.4-cooper/src/libtcod-1.5.1/:$LD_LIBRARY_PATH
+cd `dirname $0`/bin
+
+./brogue 
+
+# if [ -t 0 ]; then
+#	 ./brogue -t $*
+#else
+#	./brogue $*
+#fi
+

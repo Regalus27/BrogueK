@@ -1,0 +1,30 @@
+43207	1494310694	Escaped the Dungeons of Doom!
+35000	1494310826	Escaped the Dungeons of Doom!
+35000	1494310848	Escaped the Dungeons of Doom!
+18136	1494228393	Killed by lava on depth 25.
+12214	1493703625	Killed by a phantom on depth 21.
+5721	1491370187	Killed by a naga on depth 13.
+4537	1493355345	Killed by a phantom on depth 11.
+4216	1493014813	Burned to death on depth 11.
+4202	1491281771	Killed by a zombie on depth 12.
+3950	1490847417	Killed by a will-o-the-wisp on depth 11.
+3770	1492490438	Killed by a wraith on depth 10.
+3770	1491540863	Killed by a wraith on depth 12.
+3352	1491457797	Killed by a dar blademaster on depth 11.
+2772	1491193697	Killed by an underworm on depth 13.
+2487	1491887489	Starved to death on depth 11.
+1905	1492494086	Killed by a centipede on depth 8.
+1665	1493533054	Killed by a goblin on depth 8.
+1541	1493612622	Killed by a jackal on depth 6.
+1465	1490328283	Killed by a cloud of caustic gas on depth 6.
+1307	1487654993	Killed by an ogre on depth 8.
+943	1493363814	Killed by a violent explosion on depth 5.
+915	1490840750	Killed by a jackal on depth 6.
+650	1490326576	Killed by an ogre on depth 5.
+626	1492491415	Killed by a pink jelly on depth 5.
+515	1492492596	Killed by a goblin on depth 6.
+491	1491454851	Killed by a goblin on depth 4.
+440	1494220378	Quit on depth 1.
+399	1494389757	Quit on depth 3.
+325	1490841798	Killed by a fall on depth 4.
+5957	1494400763	Escaped the Dungeons of Doom with 2 lumenstones!
