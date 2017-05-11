@@ -1672,7 +1672,7 @@ creatureType monsterCatalog[NUMBER_MONSTER_KINDS] = {
 	{0, "flamedancer",	'F',	&white,			65,		80,     120,	{3, 8, 2},		0,	100,	100,	DF_EMBER_BLOOD,	FLAMEDANCER_LIGHT,100,DF_FLAMEDANCER_CORONA, {BOLT_FIRE},
 		(MONST_MAINTAINS_DISTANCE | MONST_IMMUNE_TO_FIRE | MONST_FIERY), (0)},
 	{0, "wyrm", 		'D',	&centipedeColor,250,	120,	300,	{30, 60, 5},	20, 50, 	200,	DF_GREEN_BLOOD, 0,		0, 		0,				{BOLT_DRAGONFIRE, BOLT_NEGATION}, 
-		(MONST_IMMUNE_TO_FIRE | MONST_CARRY_ITEM_100), (MA_ATTACKS_ALL_ADJACENT)}
+		(MONST_IMMUNE_TO_FIRE | MONST_CARRY_ITEM_100), (MA_ATTACKS_ALL_ADJACENT)},
 	
 	// special effect monsters
 	{0, "spectral blade",WEAPON_CHAR, &spectralBladeColor,1, 0,	150,	{1, 1, 1},		0,	50,		100,	0,              SPECTRAL_BLADE_LIGHT,0,0,       {0},
