@@ -1,4 +1,6 @@
 A Brogue fork with more monsters. There are certainly small bugs that haven't been addressed yet, but the game should run.
+Currently only on Linux.
+
 
 Kobold Archer
 Fire Beetle
