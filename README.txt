@@ -9,3 +9,6 @@ Dragon Warrior
 Dragonblessed
 
 Replaced rat trap with Fire Beetle trap, a fire immunity potion appears somewhere on the level.
+
+Next:
+Create new staff, explosion maybe?
