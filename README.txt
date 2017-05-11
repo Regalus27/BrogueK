@@ -2,6 +2,7 @@ A Brogue fork with more monsters. There are certainly small bugs that haven't be
 
 Kobold Archer
 Fire Beetle
+Kobold Totem
 Drake
 Wyrm
 Dragon Warrior
