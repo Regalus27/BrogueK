@@ -125,7 +125,7 @@
 #define AMULET_LEVEL			26			// how deep before the amulet appears
 #define DEEPEST_LEVEL           40          // how deep the universe goes
 
-#define MACHINES_FACTOR         1.0         // use this to adjust machine frequency
+#define MACHINES_FACTOR         2.0         // use this to adjust machine frequency
 
 #define MACHINES_BUFFER_LENGTH  200
 
@@ -2464,6 +2464,7 @@ enum machineTypes {
 	MT_KEY_SECRET_ROOM,
 	MT_KEY_THROWING_TUTORIAL_AREA,
     MT_KEY_RAT_TRAP_ROOM,
+	MT_KEY_FIRE_BEETLE_ROOM,
 	MT_KEY_FIRE_TRANSPORTATION_ROOM,
 	MT_KEY_FLOOD_TRAP_ROOM,
     MT_KEY_FIRE_TRAP_ROOM,
