@@ -1291,13 +1291,18 @@ const blueprint blueprintCatalog[NUMBER_BLUEPRINTS] = {
 	{{1, 4},			{70, 80},	8,		2,			0,                  (BP_ADOPT_ITEM), {
 		{0,			ALTAR_CAGE_RETRACTABLE,DUNGEON,{1,1},	1,			0,			-1,			0,				3,				0,			0,			(MF_ADOPT_ITEM | MF_IMPREGNABLE | MF_NOT_IN_HALLWAY)},
 		{DF_MEDIUM_HOLE, MACHINE_PRESSURE_PLATE, LIQUID, {1,1}, 1,		0,			0,			0,				1,				0,			0,			(MF_TREAT_AS_BLOCKING | MF_NOT_IN_HALLWAY)}}},
-    // Rat trap -- getting the key triggers paralysis vents nearby and also causes rats to burst out of the walls
+    /*// Rat trap -- getting the key triggers paralysis vents nearby and also causes rats to burst out of the walls
 	{{1,8},             {30, 70},	7,		3,          0,                  (BP_ADOPT_ITEM | BP_ROOM),	{
 		{0,			ALTAR_SWITCH,DUNGEON,		{1,1},		1,			0,			-1,			0,				1,				0,			0,			(MF_ADOPT_ITEM | MF_FAR_FROM_ORIGIN | MF_TREAT_AS_BLOCKING | MF_NOT_IN_HALLWAY)},
         {0,			MACHINE_PARALYSIS_VENT_HIDDEN,DUNGEON,{1,1},1,		0,			-1,			0,				2,				0,			0,			(MF_FAR_FROM_ORIGIN | MF_NOT_IN_HALLWAY)},
         {0,			RAT_TRAP_WALL_DORMANT,DUNGEON,{10,20},	5,			0,			-1,			MK_RAT,         1,				0,			0,			(MF_MONSTERS_DORMANT | MF_BUILD_IN_WALLS | MF_NOT_ON_LEVEL_PERIMETER)}}},
+<<<<<<< HEAD
 	// Fire Beetle Trap -- getting the key triggers paralysis vents nearby and also causes fire beetles to burst out of the walls
 	{{1,8},             {30, 70},	7,		4,          0,                  (BP_ADOPT_ITEM | BP_ROOM),	{
+=======
+	*/// Fire Beetle trap -- getting the key triggers paralysis vents nearby and also causes fire beetles... fire.... to burst out of the walls
+	{{1,8},             {30, 70},	7,		3,          0,                  (BP_ADOPT_ITEM | BP_ROOM),	{
+>>>>>>> e5f4ab525d57d646fb5f79fb633ce816c2bc7e12
 		{0,			ALTAR_SWITCH,DUNGEON,		{1,1},		1,			0,			-1,			0,				1,				0,			0,			(MF_ADOPT_ITEM | MF_FAR_FROM_ORIGIN | MF_TREAT_AS_BLOCKING | MF_NOT_IN_HALLWAY)},
         {0,			MACHINE_PARALYSIS_VENT_HIDDEN,DUNGEON,{1,1},1,		0,			-1,			0,				2,				0,			0,			(MF_FAR_FROM_ORIGIN | MF_NOT_IN_HALLWAY)},
         {0,			RAT_TRAP_WALL_DORMANT,DUNGEON,{10,20},	5,			0,			-1,			MK_RAT,         1,				0,			0,			(MF_MONSTERS_DORMANT | MF_BUILD_IN_WALLS | MF_NOT_ON_LEVEL_PERIMETER)},		
