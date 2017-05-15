@@ -1291,18 +1291,13 @@ const blueprint blueprintCatalog[NUMBER_BLUEPRINTS] = {
 	{{1, 4},			{70, 80},	8,		2,			0,                  (BP_ADOPT_ITEM), {
 		{0,			ALTAR_CAGE_RETRACTABLE,DUNGEON,{1,1},	1,			0,			-1,			0,				3,				0,			0,			(MF_ADOPT_ITEM | MF_IMPREGNABLE | MF_NOT_IN_HALLWAY)},
 		{DF_MEDIUM_HOLE, MACHINE_PRESSURE_PLATE, LIQUID, {1,1}, 1,		0,			0,			0,				1,				0,			0,			(MF_TREAT_AS_BLOCKING | MF_NOT_IN_HALLWAY)}}},
-    /*// Rat trap -- getting the key triggers paralysis vents nearby and also causes rats to burst out of the walls
+    // Rat trap -- getting the key triggers paralysis vents nearby and also causes rats to burst out of the walls
 	{{1,8},             {30, 70},	7,		3,          0,                  (BP_ADOPT_ITEM | BP_ROOM),	{
 		{0,			ALTAR_SWITCH,DUNGEON,		{1,1},		1,			0,			-1,			0,				1,				0,			0,			(MF_ADOPT_ITEM | MF_FAR_FROM_ORIGIN | MF_TREAT_AS_BLOCKING | MF_NOT_IN_HALLWAY)},
         {0,			MACHINE_PARALYSIS_VENT_HIDDEN,DUNGEON,{1,1},1,		0,			-1,			0,				2,				0,			0,			(MF_FAR_FROM_ORIGIN | MF_NOT_IN_HALLWAY)},
         {0,			RAT_TRAP_WALL_DORMANT,DUNGEON,{10,20},	5,			0,			-1,			MK_RAT,         1,				0,			0,			(MF_MONSTERS_DORMANT | MF_BUILD_IN_WALLS | MF_NOT_ON_LEVEL_PERIMETER)}}},
-<<<<<<< HEAD
 	// Fire Beetle Trap -- getting the key triggers paralysis vents nearby and also causes fire beetles to burst out of the walls
 	{{1,8},             {30, 70},	7,		4,          0,                  (BP_ADOPT_ITEM | BP_ROOM),	{
-=======
-	*/// Fire Beetle trap -- getting the key triggers paralysis vents nearby and also causes fire beetles... fire.... to burst out of the walls
-	{{1,8},             {30, 70},	7,		3,          0,                  (BP_ADOPT_ITEM | BP_ROOM),	{
->>>>>>> e5f4ab525d57d646fb5f79fb633ce816c2bc7e12
 		{0,			ALTAR_SWITCH,DUNGEON,		{1,1},		1,			0,			-1,			0,				1,				0,			0,			(MF_ADOPT_ITEM | MF_FAR_FROM_ORIGIN | MF_TREAT_AS_BLOCKING | MF_NOT_IN_HALLWAY)},
         {0,			MACHINE_PARALYSIS_VENT_HIDDEN,DUNGEON,{1,1},1,		0,			-1,			0,				2,				0,			0,			(MF_FAR_FROM_ORIGIN | MF_NOT_IN_HALLWAY)},
         {0,			RAT_TRAP_WALL_DORMANT,DUNGEON,{10,20},	5,			0,			-1,			MK_RAT,         1,				0,			0,			(MF_MONSTERS_DORMANT | MF_BUILD_IN_WALLS | MF_NOT_ON_LEVEL_PERIMETER)},		
@@ -2006,8 +2001,8 @@ const hordeType hordeCatalog[NUMBER_HORDES] = {
 	{MK_BLOAT,			1,		{MK_BLOAT},								{{0, 2, 1}},					14,		26,		3},
 	{MK_PIT_BLOAT,		1,		{MK_PIT_BLOAT},							{{0, 2, 1}},					14,		26,		1},
 	{MK_EXPLOSIVE_BLOAT,0,		{0},									{{0}},							10,		26,		1},
-	{MK_DRAKE,			0,		{0},									{{0}},							5,		13,		10},
-	{MK_DRAKE,			1,		{MK_DRAKE},								{{1, 3, 1}},					12,		17,		10},
+	{MK_DRAKE,			0,		{0},									{{0}},							8,		17,		10},
+	{MK_DRAKE,			1,		{MK_DRAKE},								{{1, 3, 1}},					15,		23,		5},
 	{MK_GOBLIN,			0,		{0},									{{0}},							3,		10,		10},
 	{MK_GOBLIN_CONJURER,0,		{0},									{{0}},							3,		10,		6},
 	{MK_TOAD,			0,		{0},									{{0}},							4,		11,		10},
@@ -2046,7 +2041,7 @@ const hordeType hordeCatalog[NUMBER_HORDES] = {
 	{MK_PIXIE,			0,		{0},									{{0}},							14,		21,		8},
 	{MK_FLAME_TURRET,	0,		{0},									{{0}},							14,		24,		10,		WALL,	0,                      HORDE_NO_PERIODIC_SPAWN},
 	{MK_DAR_BLADEMASTER,2,		{MK_DAR_BLADEMASTER, MK_DAR_PRIESTESS},	{{0, 1, 1}, {0, 1, 1}},			15,		17,		10},
-	{MK_KOBOLD_DRAGONBLESSED, 0,{0},									{{0}},							12,		16,		5},
+	{MK_KOBOLD_DRAGONBLESSED, 0,{0},									{{0}},							13,		16,		5},
 	{MK_KOBOLD_DRAGONBLESSED, 1,{MK_KOBOLD_DRAGONBLESSED},				{{1,3,1}},						16,		30,		6},
     {MK_PINK_JELLY,     2,		{MK_PINK_JELLY, MK_DAR_PRIESTESS},      {{0, 1, 1}, {1, 2, 1}},			17,		23,		7},
 	{MK_KRAKEN,			0,		{0},									{{0}},							15,		30,		10,		DEEP_WATER},
@@ -2060,7 +2055,9 @@ const hordeType hordeCatalog[NUMBER_HORDES] = {
 	{MK_TENTACLE_HORROR,0,		{0},									{{0}},							22,		DEEPEST_LEVEL-1,		10},
 	{MK_PHYLACTERY,		0,		{0},									{{0}},							22,		DEEPEST_LEVEL-1,		10},
 	{MK_DRAGON,			0,		{0},									{{0}},							24,		DEEPEST_LEVEL-1,		7},
-//ADD DRAGON WARRIOR SPAWN
+	{MK_DRAGON_WARRIOR,	0,		{0},									{{0}},							20,		28,		5},
+	{MK_DRAGON_WARRIOR, 1,		{MK_DRAGON_WARRIOR},						{{1, 3, 1}},					25,		DEEPEST_LEVEL-1,		10},
+	{MK_DRAGON,			4,		{MK_DRAGON, MK_DRAKE, MK_KOBOLD_DRAGONBLESSED, MK_DRAGON_WARRIOR},	{{1,2,1},{3,6,2},{5,8,2},{3,5,1}},	35, DEEPEST_LEVEL-1, 8},
 	{MK_DRAGON,			1,		{MK_KOBOLD_DRAGONBLESSED},				{{1,2,1}},						25,		DEEPEST_LEVEL-1,		5},
 	{MK_DRAGON,			1,		{MK_DRAGON},							{{1,1,1}},						27,		DEEPEST_LEVEL-1,		3},
 	{MK_DRAGON,			2,		{MK_KOBOLD_DRAGONBLESSED, MK_DRAKE},	{{1,2,1}, {1, 2, 1}},			26,		DEEPEST_LEVEL-1,	2},
@@ -2363,13 +2360,13 @@ const itemTable foodTable[NUMBER_FOOD_KINDS] = {
 };
 
 const itemTable weaponTable[NUMBER_WEAPON_KINDS] = {
-	{"dagger",				"", "", 10, 190,		12,	{3,	4,	1},		true, false, "A simple iron dagger with a well-worn wooden handle. Daggers will deal quintuple damage upon a succesful sneak attack instead of triple damage."},
+	{"dagger",				"", "", 10, 190,		12,	{2,	5,	1},		true, false, "A simple iron dagger with a well-worn wooden handle. Daggers will deal quintuple damage upon a succesful sneak attack instead of triple damage."},
 	{"sword",				"", "", 10, 440,		14, {7,	9,	1},		true, false, "The razor-sharp length of steel blade shines reassuringly."},
 	{"broadsword",			"", "", 10, 990,		19,	{14, 22, 1},	true, false, "This towering blade inflicts heavy damage by investing its heft into every cut."},
 	
     {"whip",				"", "", 10, 440,		14, {3,	5,	1},		true, false, "This lash from this coil of braided leather can tear bark from trees, and it will reach opponents up to five spaces away."},
     {"rapier",				"", "", 10, 440,		15, {3,	5,	1},		true, false, "This blade is thin and flexible, designed for deft and rapid maneuvers. It inflicts less damage than comparable weapons, but permits you to attack twice as quickly. If there is one space between you and an enemy and you step directly toward it, you will perform a devastating lunge attack, which deals treble damage and never misses."},
-    {"flail",				"", "", 10, 440,		17, {10,13,	1},		true, false, "The spiked iron ball can be whirled at the end of its chain in synchronicity with your movement, allowing you a free attack whenever moving between two spaces that are adjacent to an enemy."},
+    {"flail",				"", "", 10, 440,		17, {9 ,14,	1},		true, false, "The spiked iron ball can be whirled at the end of its chain in synchronicity with your movement, allowing you a free attack whenever moving between two spaces that are adjacent to an enemy."},
     
 	{"mace",				"", "", 10, 660,		16, {16, 20, 1},	true, false, "The iron flanges at the head of this weapon inflict substantial damage with every weighty blow. Because of its heft, it takes two turns when it hits."},
 	{"war hammer",			"", "", 10, 1100,		20, {25, 35, 1},	true, false, "Few creatures can withstand the crushing blow of this towering mass of lead and steel, but only the strongest of adventurers can effectively wield it. Because of its heft, it takes two turns when it hits."},
@@ -2485,14 +2482,14 @@ itemTable staffTable[NUMBER_STAFF_KINDS] = {
 };
 
 itemTable ringTable[NUMBER_RING_KINDS] = {
-	{"clairvoyance",	itemGems[0], "",	1,	900,	0,{1,3,1}, false, false, "Wearing this ring will permit you to see through nearby walls and doors, within a radius determined by the level of the ring. A cursed ring of clairvoyance will blind you to your immediate surroundings."},
-	{"stealth",			itemGems[1], "",	1,	800,	0,{1,3,1}, false, false, "This ring will reduce your stealth range, making enemies less likely to notice you and more likely to lose your trail. Staying motionless and lurking in the shadows will make you even harder to spot. Cursed rings of stealth will increase your stealth range, making you easier to spot and to track."},
-	{"regeneration",	itemGems[2], "",	1,	750,	0,{1,3,1}, false, false, "This ring increases the body's regenerative properties, allowing one to recover lost health at an accelerated rate. Cursed rings will decrease or even halt one's natural regeneration."},
-	{"transference",	itemGems[3], "",	1,	750,	0,{1,3,1}, false, false, "Landing a melee attack while wearing this ring will heal you in proportion to the damage inflicted. Cursed rings will cause you to lose health with each attack you land."},
-	{"light",			itemGems[4], "",	1,	600,	0,{1,3,1}, false, false, "This ring subtly enhances your vision, enabling you to see farther in the dimming light of the deeper dungeon levels. It will not make you more visible to enemies."},
-	{"awareness",		itemGems[5], "",	1,	700,	0,{1,3,1}, false, false, "Wearing this ring will enable you to notice hidden secrets (traps, secret doors and hidden levers) more often and from a greater distance. Cursed rings of awareness will dull your senses, making it harder to notice secrets even when actively searching for them."},
-	{"wisdom",			itemGems[6], "",	1,	700,	0,{1,3,1}, false, false, "Your staffs will recharge at an accelerated rate in the energy field that radiates from this ring. Cursed rings of wisdom will instead cause your staffs to recharge more slowly."},
-    {"reaping",         itemGems[7], "",	1,	700,	0,{1,3,1}, false, false, "The blood magic in this ring will recharge your staffs and charms in proportion to the damage you inflict directly. Cursed rings of reaping will drain your staffs and charms when you inflict damage directly."},
+	{"clairvoyance",	itemGems[0], "",	1,	900,	0,{1,2,1}, false, false, "Wearing this ring will permit you to see through nearby walls and doors, within a radius determined by the level of the ring. A cursed ring of clairvoyance will blind you to your immediate surroundings."},
+	{"stealth",			itemGems[1], "",	1,	800,	0,{1,2,1}, false, false, "This ring will reduce your stealth range, making enemies less likely to notice you and more likely to lose your trail. Staying motionless and lurking in the shadows will make you even harder to spot. Cursed rings of stealth will increase your stealth range, making you easier to spot and to track."},
+	{"regeneration",	itemGems[2], "",	1,	750,	0,{1,2,1}, false, false, "This ring increases the body's regenerative properties, allowing one to recover lost health at an accelerated rate. Cursed rings will decrease or even halt one's natural regeneration."},
+	{"transference",	itemGems[3], "",	1,	750,	0,{1,2,1}, false, false, "Landing a melee attack while wearing this ring will heal you in proportion to the damage inflicted. Cursed rings will cause you to lose health with each attack you land."},
+	{"light",			itemGems[4], "",	1,	600,	0,{1,2,1}, false, false, "This ring subtly enhances your vision, enabling you to see farther in the dimming light of the deeper dungeon levels. It will not make you more visible to enemies."},
+	{"awareness",		itemGems[5], "",	1,	700,	0,{1,2,1}, false, false, "Wearing this ring will enable you to notice hidden secrets (traps, secret doors and hidden levers) more often and from a greater distance. Cursed rings of awareness will dull your senses, making it harder to notice secrets even when actively searching for them."},
+	{"wisdom",			itemGems[6], "",	1,	700,	0,{1,2,1}, false, false, "Your staffs will recharge at an accelerated rate in the energy field that radiates from this ring. Cursed rings of wisdom will instead cause your staffs to recharge more slowly."},
+    {"reaping",         itemGems[7], "",	1,	700,	0,{1,2,1}, false, false, "The blood magic in this ring will recharge your staffs and charms in proportion to the damage you inflict directly. Cursed rings of reaping will drain your staffs and charms when you inflict damage directly."},
 };
 
 itemTable charmTable[NUMBER_CHARM_KINDS] = {
@@ -2509,6 +2506,7 @@ itemTable charmTable[NUMBER_CHARM_KINDS] = {
     {"teleportation",   "", "",	4,	700,	0,{1,2,1}, true, false, "The surface of this nickel sphere has been etched with a perfect grid pattern. Somehow, the squares of the grid are all exactly the same size."},
     {"recharging",      "", "",	5,	700,	0,{1,2,1}, true, false, "A strip of bronze has been wound around a rough wooden sphere. Each time you touch it, you feel a tiny electric shock."},
     {"negation",        "", "",	5,	700,	0,{1,2,1}, true, false, "A featureless gray disc hangs from a leather lanyard. When you touch it, your hand briefly goes numb."},
+	{"immobilization",	"", "", 5, 	700,	0,{1,2,1}, true, false, "A thin wire of silver has been wound around a small sphere of wool. An aura of silence is projected by it, demanding not to be disturbed."},
 };
 
 #pragma mark Bolt definitions

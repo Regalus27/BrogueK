@@ -1662,6 +1662,7 @@ short charmEffectDuration(short charmKind, short enchant) {
         0,  // Teleportation
         0,  // Recharging
         0,  // Negation
+		3,	//Immobilization
     };
     const short increment[NUMBER_CHARM_KINDS] = {
         0,  // Health
@@ -1676,6 +1677,7 @@ short charmEffectDuration(short charmKind, short enchant) {
         0,  // Teleportation
         0,  // Recharging
         0,  // Negation
+		3,	//Immobilization
     };
     
     return duration[charmKind] * (pow((double) (100 + (increment[charmKind])) / 100, enchant) + FLOAT_FUDGE);
@@ -1695,6 +1697,7 @@ short charmRechargeDelay(short charmKind, short enchant) {
         1000,   // Teleportation
         10000,  // Recharging
         2500,   // Negation
+		2500,	// Immobilization
     };
     const short increment[NUMBER_CHARM_KINDS] = {
         45, // Health
@@ -1709,6 +1712,7 @@ short charmRechargeDelay(short charmKind, short enchant) {
         45, // Teleportation
         45, // Recharging
         40, // Negation
+		40,	// Immobilization
     };
     
     return charmEffectDuration(charmKind, enchant) + duration[charmKind] * (pow((double) (100 - (increment[charmKind])) / 100, enchant) + FLOAT_FUDGE);
@@ -2605,6 +2609,15 @@ void itemDetails(char *buf, item *theItem) {
                             charmNegationRadius(theItem->enchant1 + 1),
                             charmRechargeDelay(theItem->kind, theItem->enchant1 + 1));
                     break;
+				case CHARM_IMMOBILIZATION:
+					sprintf(buf2, "\n\nWhen used, the charm will immobilize all creatures in your field of view up to %i spaces away for %i turns or until hit, and recharge in %i turns. (if the charm is enchanted, it will reach up to %i spaces, last for %i turns, and recharge in %i turns.)",
+							charmNegationRadius(theItem->enchant1)/4,
+							(theItem->enchant1),
+							charmRechargeDelay(theItem->kind, theItem->enchant1),
+							charmNegationRadius(theItem->enchant1 + 1)/4,
+							((theItem->enchant1)+1),
+							charmRechargeDelay(theItem->kind, theItem->enchant1 + 1));
+					break;
                 default:
                     break;
             }
@@ -3897,7 +3910,28 @@ void negationBlast(const char *emitterName, const short distance) {
         }
     }
 }
-
+void immobilizationBlast(const char *emitterName, const short distance, const short duration) {
+    creature *monst, *nextMonst;
+    item *theItem;
+    char buf[DCOLS];
+    
+    sprintf(buf, "%s emits a wave of silence!", emitterName);
+    messageWithColor(buf, &itemMessageColor, false);
+    colorFlash(&pink, 0, IN_FIELD_OF_VIEW, 3 + distance / 5, distance, player.xLoc, player.yLoc);
+    for (monst = monsters->nextCreature; monst != NULL;) {
+        nextMonst = monst->nextCreature;
+        if ((pmap[monst->xLoc][monst->yLoc].flags & IN_FIELD_OF_VIEW)
+            && (player.xLoc - monst->xLoc) * (player.xLoc - monst->xLoc) + (player.yLoc - monst->yLoc) * (player.yLoc - monst->yLoc) <= distance * distance) {
+            
+            if (canSeeMonster(monst)) {
+                flashMonster(monst, &pink, 100);
+            }
+            //immobilize monst
+			monst->status[STATUS_PARALYZED] = duration;
+        }
+        monst = nextMonst;
+    }
+}
 void discordBlast(const char *emitterName, const short distance) {
     creature *monst, *nextMonst;
     char buf[DCOLS];
@@ -6131,6 +6165,8 @@ void useCharm(item *theItem) {
         case CHARM_NEGATION:
             negationBlast("your charm", charmNegationRadius(theItem->enchant1) + 1); // Add 1 because otherwise radius 1 would affect only the player.
             break;
+		case CHARM_IMMOBILIZATION:
+			immobilizationBlast("your charm", charmNegationRadius(theItem->enchant1)/4, (theItem->enchant1) + 1);
         default:
             break;
     }

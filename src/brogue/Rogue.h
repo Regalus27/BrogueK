@@ -35,7 +35,7 @@
 
 // debug macros -- define DEBUGGING as 1 to enable wizard mode.
 
-#define DEBUGGING						1
+#define DEBUGGING						0
 
 #define DEBUG							if (DEBUGGING)
 #define MONSTERS_ENABLED				(!DEBUGGING || 1) // Quest room monsters can be generated regardless.
@@ -125,7 +125,7 @@
 #define AMULET_LEVEL			26			// how deep before the amulet appears
 #define DEEPEST_LEVEL           40          // how deep the universe goes
 
-#define MACHINES_FACTOR         2.0         // use this to adjust machine frequency
+#define MACHINES_FACTOR         1.3         // use this to adjust machine frequency
 
 #define MACHINES_BUFFER_LENGTH  200
 
@@ -882,6 +882,7 @@ enum charmKind {
     CHARM_TELEPORTATION,
     CHARM_RECHARGING,
     CHARM_NEGATION,
+	CHARM_IMMOBILIZATION,
     NUMBER_CHARM_KINDS
 };
 
@@ -991,7 +992,7 @@ enum monsterTypes {
 
 #define NUMBER_MUTATORS             8
 
-#define	NUMBER_HORDES				170
+#define	NUMBER_HORDES				170 //needs update
 
 #define MONSTER_CLASS_COUNT         13
 
