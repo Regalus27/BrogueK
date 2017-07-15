@@ -428,6 +428,7 @@ const autoGenerator autoGeneratorCatalog[NUMBER_AUTOGENERATORS] = {
 	{0,							0,		0,							MT_BRIDGE_TURRET_AREA,		FLOOR,		NOTHING,    5,		DEEPEST_LEVEL-1,6,		0,		0,			2},
 	{0,							0,		0,							MT_LAKE_PATH_TURRET_AREA,	FLOOR,		NOTHING,    5,		DEEPEST_LEVEL-1,6,		0,		0,			2},
 	{0,							0,		0,							MT_TRICK_STATUE_AREA,		FLOOR,		NOTHING,    6,		DEEPEST_LEVEL-1,15,		0,		0,			3},
+	{0,							0,		0,							MT_DAR_GLADE,				FLOOR,		NOTHING,	12,		DEEPEST_LEVEL-1,25,		0,		0,			3},	
 	{0,							0,		0,							MT_SENTINEL_AREA,			FLOOR,		NOTHING,    12,		DEEPEST_LEVEL-1,10,		0,		0,			2},
 	{0,							0,		0,							MT_WORM_AREA,				FLOOR,		NOTHING,    12,		DEEPEST_LEVEL-1,12,		0,		0,			3},
 };
@@ -1026,6 +1027,7 @@ dungeonProfile dungeonProfileCatalog[NUMBER_DUNGEON_PROFILES] = {
     {{10,   0,  0,  3,  7,  10, 10, 0}, 0},     // First room for basic dungeon generation (further adjusted by depth)
     
     {{0,    0,  1,  0,  0,  0,  0,  0}, 0},     // Goblin warrens
+	{{0,	0,	0,	3,	0,	3,	0,	0},	0},		// Dar glade
     {{0,    5,  0,  1,  0,  0,  0,  0}, 0},     // Sentinel sanctuaries
 };
 
@@ -1537,7 +1539,13 @@ const blueprint blueprintCatalog[NUMBER_BLUEPRINTS] = {
 		{0,			STATUE_DORMANT,DUNGEON,		{1, 1},		1,			0,			-1,			0,				1,				HORDE_MACHINE_STATUE,0,	(MF_GENERATE_HORDE | MF_MONSTERS_DORMANT | MF_BUILD_AT_ORIGIN | MF_ALTERNATIVE)},
 		{0,			STATUE_DORMANT,DUNGEON,		{1, 1},		1,			0,			-1,			0,				1,				HORDE_MACHINE_STATUE,0,	(MF_GENERATE_HORDE | MF_MONSTERS_DORMANT | MF_BUILD_IN_WALLS | MF_ALTERNATIVE | MF_NOT_ON_LEVEL_PERIMETER)},
 		{0,			MACHINE_TRIGGER_FLOOR,DUNGEON,{0,0},	2,			0,			-1,			0,				0,				0,			0,			(MF_EVERYWHERE)}}},
-	// Worms in the walls -- step on trigger region to cause underworms to burst out of the walls
+// Dar glade - dar blademaster middle, dar priestess across chasm
+	//test first	
+	{{1,DEEPEST_LEVEL},	{20, 20},	0,		3,			0,									(BP_REQUIRE_BLOCKING | BP_OPEN_INTERIOR | BP_NO_INTERIOR_FLAG),	{
+		{DF_CHASM_HOLE,	0,		0,		{20, 40},	1,		0,			-1,			0,				1,				0,			0,			(MF_TREAT_AS_BLOCKING | MF_REPEAT_UNTIL_NO_PROGRESS)},
+		{DF_GRASS,			0,		0,		{1,	1},		1,		0,			-1,			MK_DAR_BLADEMASTER, 1,	0,			0,			(MF_NEAR_ORIGIN | MF_NOT_ON_LEVEL_PERIMETER)},
+		{DF_GRASS,	0,	DUNGEON,	{1, 2}, 1, 0,	-1,	MK_DAR_PRIESTESS, 1, 	0, 	0,	(MF_IN_VIEW_OF_ORIGIN | MF_NOT_ON_LEVEL_PERIMETER)}}},
+// Worms in the walls -- step on trigger region to cause underworms to burst out of the walls
 	{{1,DEEPEST_LEVEL},	{7, 7},		0,		2,			0,                  (BP_NO_INTERIOR_FLAG), {
 		{0,			WALL_MONSTER_DORMANT,DUNGEON,{1, 3},	1,			0,			-1,			MK_UNDERWORM,	1,				0,			0,			(MF_MONSTERS_DORMANT | MF_BUILD_IN_WALLS | MF_NOT_ON_LEVEL_PERIMETER)},
 		{0,			MACHINE_TRIGGER_FLOOR,DUNGEON,{0,0},	2,			0,			-1,			0,				0,				0,			0,			(MF_EVERYWHERE)}}},

@@ -1446,6 +1446,10 @@ void inflictLethalDamage(creature *attacker, creature *defender) {
     inflictDamage(attacker, defender, defender->currentHP, NULL, true);
 }
 
+void inflictShatterDamage(creature *hider) {
+    inflictDamage(NULL, hider, hider->currentHP/4, &teal, true); //use for monsters hiding in walls when shatter charm/scroll used
+}
+
 // returns true if this was a killing stroke; does NOT free the pointer, but DOES remove it from the monster chain
 // flashColor indicates the color that the damage will cause the creature to flash
 boolean inflictDamage(creature *attacker, creature *defender,

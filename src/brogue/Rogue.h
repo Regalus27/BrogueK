@@ -49,11 +49,11 @@
 #define D_SCENT_VISION                  (DEBUGGING && 0)
 #define D_DISABLE_BACKGROUND_COLORS		(DEBUGGING && 0)
 
-#define D_INSPECT_LEVELGEN				(DEBUGGING && 0)
-#define D_INSPECT_MACHINES				(DEBUGGING && 0)
+#define D_INSPECT_LEVELGEN				(DEBUGGING && 0) 
+#define D_INSPECT_MACHINES				(DEBUGGING && 1) 
 
 #define D_MESSAGE_ITEM_GENERATION       (DEBUGGING && 0)
-#define D_MESSAGE_MACHINE_GENERATION    (DEBUGGING && 0)
+#define D_MESSAGE_MACHINE_GENERATION    (DEBUGGING && 1)
 
 // set to false to allow multiple loads from the same saved file:
 #define DELETE_SAVE_FILE_AFTER_LOADING	true
@@ -125,7 +125,7 @@
 #define AMULET_LEVEL			26			// how deep before the amulet appears
 #define DEEPEST_LEVEL           40          // how deep the universe goes
 
-#define MACHINES_FACTOR         1.3         // use this to adjust machine frequency
+#define MACHINES_FACTOR         1.7         // use this to adjust machine frequency
 
 #define MACHINES_BUFFER_LENGTH  200
 
@@ -136,9 +136,9 @@
 #define WEAPON_ENCHANT_ACCURACY_FACTOR      1.065		// Each marginal point of weapon enchantment
                                                         // multiplies accuracy by this factor.
 
-#define WEAPON_KILLS_TO_AUTO_ID	20
-#define ARMOR_DELAY_TO_AUTO_ID	1000
-#define RING_DELAY_TO_AUTO_ID	1500
+#define WEAPON_KILLS_TO_AUTO_ID	10 //revert: 20
+#define ARMOR_DELAY_TO_AUTO_ID	500 //revert: 1000
+#define RING_DELAY_TO_AUTO_ID	750 //revert: 1500
 
 #define FALL_DAMAGE_MIN         8
 #define FALL_DAMAGE_MAX         10
@@ -882,7 +882,7 @@ enum charmKind {
     CHARM_TELEPORTATION,
     CHARM_RECHARGING,
     CHARM_NEGATION,
-	CHARM_IMMOBILIZATION,
+    CHARM_IMMOBILIZATION,
     NUMBER_CHARM_KINDS
 };
 
@@ -1693,6 +1693,7 @@ enum dungeonProfileTypes {
     DP_BASIC_FIRST_ROOM,
     
     DP_GOBLIN_WARREN,
+    DP_DAR_GLADE,
     DP_SENTINEL_SANCTUARY,
     
     NUMBER_DUNGEON_PROFILES,
@@ -2507,6 +2508,7 @@ enum machineTypes {
     MT_PARALYSIS_TRAP_AREA,
     MT_PARALYSIS_TRAP_HIDDEN_AREA,
 	MT_TRICK_STATUE_AREA,
+	MT_DAR_GLADE,
 	MT_WORM_AREA,
 	MT_SENTINEL_AREA,
 	

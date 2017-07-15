@@ -160,9 +160,9 @@ item *makeItemInto(item *theItem, unsigned long itemCategory, short itemKind) {
 					break;
 			}
 			
-			if (rand_percent(40)) {
-				theItem->enchant1 += rand_range(1, 3);
-				if (rand_percent(50)) {
+			if (rand_percent(60)) { //revert: 40
+				theItem->enchant1 += rand_range(1, 4); //revert: 1, 3
+				if (rand_percent(20)) { //revert: 50
 					// cursed
 					theItem->enchant1 *= -1;
 					theItem->flags |= ITEM_CURSED;
@@ -181,7 +181,7 @@ item *makeItemInto(item *theItem, unsigned long itemCategory, short itemKind) {
 						theItem->vorpalEnemy = chooseVorpalEnemy();
 					}
 				} else {
-                    while (rand_percent(10)) {
+                    while (rand_percent(60)) {  //revert: 10
                         theItem->enchant1++;
                     }
                 }
@@ -3976,8 +3976,9 @@ void crystalize(short radius) {
 						monst = monsterAtLoc(i, j);
 						if (monst->info.flags & MONST_ATTACKABLE_THRU_WALLS) {
                             inflictLethalDamage(NULL, monst);
-						} else {
+						} else { //if a monster hiding in a statue I think, not a turret
 							freeCaptivesEmbeddedAt(i, j);
+							inflictShatterDamage(monst);
 						}
 					}
 				}

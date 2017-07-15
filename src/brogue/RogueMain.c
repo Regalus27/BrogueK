@@ -248,8 +248,8 @@ void initializeRogue(unsigned long seed) {
 	
 	// reset enchant and gain strength frequencies
     rogue.lifePotionFrequency = 0;
-	rogue.strengthPotionFrequency = 40;
-	rogue.enchantScrollFrequency = 60;
+	rogue.strengthPotionFrequency = 60;
+	rogue.enchantScrollFrequency = 80;
 	
 	// all DF messages are eligible for display
 	resetDFMessageEligibility();
@@ -449,6 +449,7 @@ void initializeRogue(unsigned long seed) {
     recalculateEquipmentBonuses();
 	
 	DEBUG {
+
 		theItem = generateItem(RING, RING_CLAIRVOYANCE);
 		theItem->enchant1 = max(DROWS, DCOLS);
 		theItem->flags &= ~ITEM_CURSED;
@@ -493,7 +494,7 @@ void initializeRogue(unsigned long seed) {
 		theItem = addItemToPack(theItem);
 		
 		theItem = generateItem(STAFF, STAFF_TUNNELING);
-		theItem->enchant1 = 10;
+		theItem->enchant1 = 30;
 		theItem->charges = 3000;
 		theItem->flags &= ~ITEM_CURSED;
 		identify(theItem);
@@ -568,11 +569,22 @@ void initializeRogue(unsigned long seed) {
 		identify(theItem);
 		theItem = addItemToPack(theItem);
         
-//		short i;
-//		for (i=0; i < NUMBER_CHARM_KINDS && i < 4; i++) {
-//			theItem = generateItem(CHARM, i);
-//			theItem = addItemToPack(theItem);
-//		}
+		/*short i;
+		for (i=0; i < NUMBER_CHARM_KINDS && i < 4; i++) {
+			theItem = generateItem(CHARM, i);
+			theItem = addItemToPack(theItem);
+		}*/
+		theItem = generateItem(CHARM, CHARM_SHATTERING);
+		theItem->enchant1 = 25;
+		theItem = addItemToPack(theItem);
+		
+		theItem = generateItem(CHARM, CHARM_IMMOBILIZATION);
+		theItem->enchant1 = 25;
+		theItem = addItemToPack(theItem);
+
+		theItem = generateItem(CHARM, CHARM_NEGATION);
+		theItem->enchant1 = 25;
+		theItem = addItemToPack(theItem);
 	}
 	blackOutScreen();
 	welcome();
